@@ -1,0 +1,12 @@
+# Site settings
+title: Data Science Specialization
+email:
+description: Community Site
+baseurl:
+url:
+twitter_username:
+github_username:  DataScienceSpecialization
+
+# Build settings
+markdown: kramdown
+permalink: pretty

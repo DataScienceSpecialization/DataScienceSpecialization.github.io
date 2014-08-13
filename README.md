@@ -11,4 +11,4 @@ If you've created a web page, video, sideshow, or any other kind of media you th
 3. Commit your changes. 
 4. Submit a pull request.
 
-We've created a [sample pull request]() to show you what we would like to see in a pull request. If we think your creation is well made, informative, and adds something new to this repository of content then we'll merge your request and add you to our list of contributors. If you happen to notice any inaccuracies or idiosyncrasies on this site or in this site's content, please let us know by opening an issue.
+We've created a [sample pull request](https://github.com/DataScienceSpecialization/DataScienceSpecialization.github.io/pull/1) to show you what we would like to see in a pull request. If we think your creation is well made, informative, and adds something new to this repository of content then we'll merge your request and add you to our list of contributors. If you happen to notice any inaccuracies or idiosyncrasies on this site or in this site's content, please let us know by opening an issue.

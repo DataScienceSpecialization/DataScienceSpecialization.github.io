@@ -18,3 +18,4 @@ interested in contributing [click here](https://github.com/DataScienceSpecializa
 8. [Practical Machine Learning](/pml/)
 9. [Developing Data Products](/ddp/)
 10. [Other Resources](/other/)
+11. [Student Projects](/projects/)

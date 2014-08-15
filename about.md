@@ -16,5 +16,5 @@ The [Data Science Specialization](https://www.coursera.org/specialization/jhudat
 
 ### Community Contributors:
 
-- Kevin Markham
+- [Kevin Markham](http://www.dataschool.io/)
 - Derek Franks

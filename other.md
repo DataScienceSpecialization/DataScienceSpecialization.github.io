@@ -8,3 +8,9 @@ permalink: /other/
 
 - [Installing xlsx and XML packages on Debian Wheezy](http://allanino.me/blog/programming/installing-some-r-packages/)
 - [Windows batch file to work around RStudio startup issues](https://github.com/stepds/contrib-DataScienceSpecialization/blob/master/README.md)
+
+
+## Course Order
+
+- [Course Order](https://github.com/dougpulse/DataScienceSpecialization.github.io/blob/master/CourseRelationships.htm)
+- [Course Order](https://dougpulse.com/DataScience.htm)

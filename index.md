@@ -17,4 +17,6 @@ interested in contributing [click here](https://github.com/DataScienceSpecializa
 7. [Regression Models](/regmod/)
 8. [Practical Machine Learning](/pml/)
 9. [Developing Data Products](/ddp/)
-10. [Other Resources](/other/)
+
+- [Other Resources](/other/)
+- [Curated Knowledge](/curated/)

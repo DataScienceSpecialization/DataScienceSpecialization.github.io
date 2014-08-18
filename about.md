@@ -6,7 +6,7 @@ permalink: /about/
 
 The [Data Science Specialization](https://www.coursera.org/specialization/jhudatascience/1) is a 9 courses series on Data Science. Every class in the series runs every month, and the course material is availible on [GitHub](https://github.com/DataScienceSpecialization/courses).
 
-### The JHU Data Science Lab Team:
+### The JHU Data Science Lab:
 
 - [Brian Caffo](http://www.bcaffo.com/)
 - [Jeff Leek](http://jtleek.com/)
@@ -18,3 +18,7 @@ The [Data Science Specialization](https://www.coursera.org/specialization/jhudat
 
 - [Kevin Markham](http://www.dataschool.io/)
 - Derek Franks
+- David Hood
+- Michael Sachs
+- Allan Inocêncio de Souza Costa
+- [stepds](https://github.com/stepds)

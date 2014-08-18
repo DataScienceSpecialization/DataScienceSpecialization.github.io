@@ -15,7 +15,7 @@ We've created a [sample pull request](https://github.com/DataScienceSpecializati
 
 **If you are not the author of the content you are submitting** you are welcome to add your link to the [Curated Knowledge](http://datasciencespecialization.github.io/curated/) page. We've created this page specifically so that you can share data science resources that you've found useful.
 
-**Otherwise if you *are* the author of the content you're submitting**you should ask yourself the following questions:
+**Otherwise if you *are* the author of the content you're submitting** you should ask yourself the following questions:
 
 1. Does my contribution teach?
 2. Does the content of my contribution clearly address topics in the Data Science Specialization?

@@ -22,3 +22,4 @@ The [Data Science Specialization](https://www.coursera.org/specialization/jhudat
 - Michael Sachs
 - Allan Inocêncio de Souza Costa
 - [stepds](https://github.com/stepds)
+- Bastiaan Quast

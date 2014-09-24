@@ -12,5 +12,5 @@ permalink: /curated/
 
 ### GitHub
 
-- [Git - Simple Guide] (http://rogerdudler.github.io/git-guide/)
-- [GitHub - Dealing with Multiple Accounts] (http://hmkcode.com/git-tutorial/how-to-deal-with-multiple-github-accounts-on-one-computer/)
+- [Git - Simple Guide](http://rogerdudler.github.io/git-guide/)
+- [GitHub - Dealing with Multiple Accounts](http://hmkcode.com/git-tutorial/how-to-deal-with-multiple-github-accounts-on-one-computer/)

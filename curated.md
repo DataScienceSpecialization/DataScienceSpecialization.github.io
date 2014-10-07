@@ -17,5 +17,5 @@ permalink: /curated/
 
 ## Further Reading
 
-- [Linkedin - Top 10 Big Data and Analytics References] (https://www.linkedin.com/pulse/article/20140810194033-111366377-top-10-big-data-and-analytics-references)
-- [Linkedin - Let's Get Nerdy: Data Analtyics for Business Leaders Explained] (https://www.linkedin.com/pulse/article/20140918162814-111366377-let-s-get-nerdy-data-analytics-for-business-leaders-explained)
+- [Linkedin - Top 10 Big Data and Analytics References](https://www.linkedin.com/pulse/article/20140810194033-111366377-top-10-big-data-and-analytics-references)
+- [Linkedin - Let's Get Nerdy: Data Analtyics for Business Leaders Explained](https://www.linkedin.com/pulse/article/20140918162814-111366377-let-s-get-nerdy-data-analytics-for-business-leaders-explained)

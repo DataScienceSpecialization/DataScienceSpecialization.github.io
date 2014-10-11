@@ -9,6 +9,9 @@ permalink: /curated/
 - [OLAP Operation in R](http://architects.dzone.com/articles/olap-operation-r)
 - [Journal of Statistical Software: Tidy data](http://www.jstatsoft.org/v59/i10/paper)
 
+### Command Line
+
+- [explainshell.com - match command-line arguments to their help text](http://explainshell.com/)
 
 ### GitHub
 

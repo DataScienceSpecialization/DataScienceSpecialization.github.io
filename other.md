@@ -15,3 +15,7 @@ permalink: /other/
 
 ## Pre-built virtual machines for R development.
 - [Here's a pre-built lightweight Linux machine with R and Rstudio already installed](https://github.com/queirozfcom/r-box). You just need to install [vagrant](https://www.vagrantup.com/downloads.html), download (or clone) the github repository and you'll get a clean ubuntu machine with the tools you'll need for the assignments. 
+
+- [Data Science Appliance](http://datascienceappliance.com/) - A perfectly provisioned virtual machine for data scientists.
+
+- [Data Science Toolbox](http://datasciencetoolbox.org/) - A virtual environment that allows you to start doing data science in a matter of minutes.

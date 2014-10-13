@@ -12,3 +12,6 @@ permalink: /other/
 
 ## Troubleshooting
 - [Windows batch file to work around RStudio startup issues](https://github.com/stepds/contrib-DataScienceSpecialization/blob/master/README.md)
+
+## Pre-built virtual machines for R development.
+- [Here's a pre-built lightweight Linux machine with R and Rstudio already installed](https://github.com/queirozfcom/r-box). You just need to install [vagrant](https://www.vagrantup.com/downloads.html), download (or clone) the github repository and you'll get a clean ubuntu machine with the tools you'll need for the assignments. 

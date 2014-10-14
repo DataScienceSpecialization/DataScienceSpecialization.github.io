@@ -12,11 +12,15 @@ permalink: /curated/
 ### Command Line
 
 - [explainshell.com - match command-line arguments to their help text](http://explainshell.com/)
+- [The Command Line Crash Course - Quick course in using the command line](http://cli.learncodethehardway.org/book/)
 
 ### GitHub
 
+- [Official Git Tutorial](http://git-scm.com/docs/gittutorial)
 - [Git - Simple Guide](http://rogerdudler.github.io/git-guide/)
+- [Git Immersion - A guided tour through the fundamentals of Git](http://gitimmersion.com/)
 - [GitHub - Dealing with Multiple Accounts](http://hmkcode.com/git-tutorial/how-to-deal-with-multiple-github-accounts-on-one-computer/)
+
 
 ## Further Reading
 

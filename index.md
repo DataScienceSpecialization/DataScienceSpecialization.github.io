@@ -19,4 +19,4 @@ interested in contributing [click here](https://github.com/DataScienceSpecializa
 9. [Developing Data Products](/ddp/)
 
 - [Other Resources](/other/)
-- [Curated Knowledge](/curated/)
+- [Curated Pages](/curated/)

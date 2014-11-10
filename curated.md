@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Curated Knowledge
+title: Curated Pages
 permalink: /curated/
 ---
 
@@ -21,8 +21,16 @@ permalink: /curated/
 - [Git Immersion - A guided tour through the fundamentals of Git](http://gitimmersion.com/)
 - [GitHub - Dealing with Multiple Accounts](http://hmkcode.com/git-tutorial/how-to-deal-with-multiple-github-accounts-on-one-computer/)
 
+### Reproducible Research
+- [Markdown live demo](http://markdown-here.com/livedemo.html)
 
-## Further Reading
+### Textbooks
+- [OpenIntro textbook](https://www.openintro.org/stat/textbook.php)
+- [Statlect - The digital textbook on probability and statistics](http://www.statlect.com/)
+- [An Introduction to Statistical Learning with Applications in R](http://www-bcf.usc.edu/~gareth/ISL/) [[PDF, 4th printing]](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Fourth%20Printing.pdf)
+- [The Elements of Statistical Learning: Data Mining, Inference, and Prediction](http://statweb.stanford.edu/~tibs/ElemStatLearn/) [[PDF, 10th ed]](http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf)
+
+### Further Reading
 
 - [Linkedin - Top 10 Big Data and Analytics References](https://www.linkedin.com/pulse/article/20140810194033-111366377-top-10-big-data-and-analytics-references)
 - [Linkedin - Let's Get Nerdy: Data Analtyics for Business Leaders Explained](https://www.linkedin.com/pulse/article/20140918162814-111366377-let-s-get-nerdy-data-analytics-for-business-leaders-explained)

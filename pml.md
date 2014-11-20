@@ -7,6 +7,7 @@ permalink: /pml/
 ## Model Evaluation
 
 - [Simple Guide to Confusion Matrix Terminology (sensitivity, specificity, etc.)](http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/)
+- ROC curves and Area Under the Curve explained: [video tutorial](http://youtu.be/OAl6eAyP-yo), [companion blog post](http://www.dataschool.io/roc-curves-and-auc-explained/) (with video transcript and screenshots)
 
 ## Supplementary Videos
 

@@ -12,3 +12,4 @@ permalink: /rprog/
 ## R Language
 
 - [Some notes on the R Language](http://lopezrj.github.io)
+- [Try R](http://tryr.codeschool.com/)

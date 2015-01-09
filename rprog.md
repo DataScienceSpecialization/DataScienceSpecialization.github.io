@@ -15,3 +15,4 @@ permalink: /rprog/
 
 ## R language cheatsheet
 - [R cheatsheet covering all lectures](https://github.com/startupjing/Tech_Notes/blob/master/R/R_language.md)
+

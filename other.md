@@ -24,3 +24,5 @@ permalink: /other/
 - [Data Science Appliance](http://datascienceappliance.com/) - A perfectly provisioned virtual machine for data scientists.
 
 - [Data Science Toolbox](http://datasciencetoolbox.org/) - A virtual environment that allows you to start doing data science in a matter of minutes.
+
+- [Virtual machine with RStudio server and github setup](https://github.com/tboloo/vagrant-rstudio) - A VirtualBox, Vagrant & chef-solo managed virtual machine which provides RStudio server with git & github setup

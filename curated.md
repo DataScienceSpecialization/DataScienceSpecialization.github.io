@@ -17,6 +17,8 @@ permalink: /curated/
 # R
 
 - [Try R](http://tryr.codeschool.com/)
+- [The Lubridate Package](http://www.jstatsoft.org/v40/i03/paper)
+
 
 ### GitHub
 

@@ -14,7 +14,7 @@ permalink: /curated/
 - [explainshell.com - match command-line arguments to their help text](http://explainshell.com/)
 - [The Command Line Crash Course - Quick course in using the command line](http://cli.learncodethehardway.org/book/)
 
-# R
+### R
 
 - [Try R](http://tryr.codeschool.com/)
 - [The Lubridate Package](http://www.jstatsoft.org/v40/i03/paper)

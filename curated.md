@@ -18,7 +18,7 @@ permalink: /curated/
 
 - [Try R](http://tryr.codeschool.com/)
 - [The Lubridate Package](http://www.jstatsoft.org/v40/i03/paper)
-- [Google Developers R Programming Video Lectures] (http://www.r-bloggers.com/google-developers-r-programming-video-lectures/)
+- [Google Developers R Programming Video Lectures](http://www.r-bloggers.com/google-developers-r-programming-video-lectures/)
 
 
 ### GitHub

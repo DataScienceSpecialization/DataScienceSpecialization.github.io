@@ -40,6 +40,7 @@ permalink: /curated/
 
 ### Further Reading
 
+- [Data Elixir - Free weekly newsletter of the best data-related resources and inspirations from around the web.](http://dataelixir.com/?referred=true)
 - [Linkedin - Top 10 Big Data and Analytics References](https://www.linkedin.com/pulse/article/20140810194033-111366377-top-10-big-data-and-analytics-references)
 - [Linkedin - Let's Get Nerdy: Data Analytics for Business Leaders Explained](https://www.linkedin.com/pulse/article/20140918162814-111366377-let-s-get-nerdy-data-analytics-for-business-leaders-explained)
 - [Data Science Central : a great repository of news and resources for data science practitioners.](http://www.datasciencecentral.com)

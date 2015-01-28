@@ -6,7 +6,8 @@ permalink: /rprog/
 
 ## Programming Assignments
 
-- [Tutorial for those struggling with Programming Assignment 1](https://github.com/derekfranks/practice_assignment)
+- [Tutorial for those struggling with Programming Assignment 1](https://github.com/derekfranks/practice_assignment)  
+- [PA1-test: `testthat`, Unit Tests for Programming Assignment 1](https://github.com/cbryant1000/pa1test)
 - [PA3-test: `testthat`, Unit Tests for Programming Assignment 3](https://github.com/cbryant1000/pa3test)
 
 

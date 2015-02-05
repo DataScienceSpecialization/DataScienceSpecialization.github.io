@@ -4,7 +4,7 @@ Since the beginning of the Data Science Specialization we've noticed the unbelie
 
 ## Contributing
 
-If you've created a web page, video, sideshow, or any other kind of media you think should be shared through this directory you should:
+If you've created a web page, video, slideshow, or any other kind of media you think should be shared through this directory you should:
 
 1. Fork this repository.
 2. Add a link to your content on the appropriate course page.

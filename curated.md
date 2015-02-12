@@ -5,6 +5,7 @@ permalink: /curated/
 ---
 
 ### Analytics
+
 - [Huge Trello Board Collection of Data Science Resources](https://trello.com/b/rbpEfMld/data-science)
 - [OLAP Operation in R](http://architects.dzone.com/articles/olap-operation-r)
 - [Journal of Statistical Software: Tidy data](http://www.jstatsoft.org/v59/i10/paper)

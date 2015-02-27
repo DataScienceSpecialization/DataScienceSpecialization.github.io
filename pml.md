@@ -16,3 +16,7 @@ permalink: /pml/
 ## Machine Learning Competitions
 
 - [Participating in Kaggle's Allstate Purchase Prediction Challenge](http://www.dataschool.io/kaggle-allstate-purchase-prediction-challenge/): Description of what it's like to compete in a Kaggle competition, including links to a project paper, R code, presentation slides, and a presentation video.
+
+## Choosing a Machine Learning Model
+
+- [Comparing Supervised Learning Algorithms](http://www.dataschool.io/comparing-supervised-learning-algorithms/): Comparing 8 common supervised learning algorithms (for regression and classification) on 13 different dimensions.

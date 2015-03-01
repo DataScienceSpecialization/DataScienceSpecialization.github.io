@@ -30,6 +30,7 @@ permalink: /curated/
 - [Git Immersion - A guided tour through the fundamentals of Git](http://gitimmersion.com/)
 - [GitHub - Dealing with Multiple Accounts](http://hmkcode.com/git-tutorial/how-to-deal-with-multiple-github-accounts-on-one-computer/)
 - [Try Git](https://try.github.io/levels/1/challenges/1)
+- [Learn Git Branching: Interactive Game] (http://pcottle.github.com/learnGitBranching/)
 
 ### Reproducible Research
 - [Markdown live demo](http://markdown-here.com/livedemo.html)

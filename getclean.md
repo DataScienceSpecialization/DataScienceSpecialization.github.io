@@ -6,7 +6,8 @@ permalink: /getclean/
 
 - [Subsetting example walkthrough](http://rpubs.com/thoughtfulbloke/subset)
 - [Apples to Oranges Data Organisation Challenge](https://github.com/thoughtfulbloke/faoexample)
-- [dplyr Video Tutorial](https://www.youtube.com/watch?v=jWjqLW-u3hc) and [R Markdown document](http://rpubs.com/justmarkham/dplyr-tutorial): An [update](http://blog.rstudio.org/2014/01/17/introducing-dplyr/) to the plyr package, useful for subsetting, sorting, summarizing, and merging data using a more intuitive syntax than plyr or base R.
+- [dplyr introductory tutorial](https://www.youtube.com/watch?v=jWjqLW-u3hc) and [R Markdown document](http://rpubs.com/justmarkham/dplyr-tutorial): A 39-minute video tutorial that covers the five basic dplyr "verbs" and a dozen other dplyr functions. dplyr is an [update](http://blog.rstudio.org/2014/01/17/introducing-dplyr/) to the plyr package, useful for subsetting, sorting, summarizing, and merging data using a more intuitive syntax than plyr or base R.
+- [dplyr "going deeper" tutorial](https://www.youtube.com/watch?v=2mh1PqfsXVI) and [R Markdown document](http://rpubs.com/justmarkham/dplyr-tutorial-part-2): A 37-minute video tutorial that covers the new functionality in dplyr versions 0.3 and 0.4.
 - [Downloading files general advice](http://rpubs.com/thoughtfulbloke/downloadtips)
 - [Codebook sample](https://gist.github.com/kirstenfrank/218c36a1938055d0f4e4)
 - [Second Codebook sample](https://gist.github.com/kirstenfrank/699abe3e16fd1dc36e5d)

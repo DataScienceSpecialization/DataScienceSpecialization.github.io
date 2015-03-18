@@ -4,4 +4,4 @@ title: Statistical Inference
 permalink: /statinf/
 ---
 
-- [Why degrees of freedom decrease for sample variance](https://github.com/Manu58/bias/blob/master/bias.pdf)
+- [Why degrees of freedom decrease for sample variance](http://manu58.github.io/bias/bias.html)

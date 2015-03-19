@@ -1,0 +1,34 @@
+# statinf-exp-distro
+
+While I was searching for real examples of exponential distribution, I came across this interesting piece.
+
+"To see an example of a distribution that is approximately exponential, we will look at the interarrival time of babies. 
+On December 18, 1997, 44 babies were born in a hospital in Brisbane, Australia. The times of birth for all 44 babies were 
+reported in the local paper; you can download the data from http://thinkstats.com/babyboom.dat. "
+
+Later, I came across the Centers for Disease Control and Prevention web site that has data (~200 MB !) on births in the US. 
+The User Guide PDF document has the columns for date and time of birth. I want to use this data in a way similar to course
+project of 'Statistical Inference' course. The project description as below:
+
+    In this project you will investigate the exponential distribution in R and compare it with the Central Limit Theorem. 
+    The exponential distribution can be simulated in R with rexp(n, λ ) where λ  is the rate parameter. 
+    The mean of exponential distribution is 1/λ  and the standard deviation is also 1/λ . Set λ = 0.2 for all 
+    of the simulations. You will investigate the distribution of averages of 40 exponentials. 
+    
+    Note that you will need to do a thousand simulations. 
+    
+    Illustrate via simulation and associated explanatory text the properties of the distribution of the mean of 40 exponentials.  
+    You should 
+    1. Show the sample mean and compare it to the theoretical mean of the distribution. 
+    2. Show how variable the sample is (via variance) and compare it to the theoretical variance of the distribution.
+    3. Show that the distribution is approximately normal.
+
+Thus, with the births dataset, to prove the convergence, do the following steps sound valid?
+
+    Establish that the data has an exponential distribution. (How do I find the λ value?)
+    Take a random sample (size = 10) of the birth inter-arrival time. Calculate its mean. 
+    Repeat this many times (n=1000). Plot it. 
+    Repeat for size=50, size=100, size=250 and size=500.
+    
+    Then, the plots (for sizes 50, 100 and 500) should converge around normal distribution.
+

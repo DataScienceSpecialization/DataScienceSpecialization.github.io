@@ -23,3 +23,4 @@ The [Data Science Specialization](https://www.coursera.org/specialization/jhudat
 - Allan Inocêncio de Souza Costa
 - [stepds](https://github.com/stepds)
 - Bastiaan Quast
+- [Xing Su](http://sux13.github.io/DataScienceSpCourseNotes/)

@@ -13,3 +13,7 @@ permalink: /getclean/
 - [Second Codebook sample](https://gist.github.com/kirstenfrank/699abe3e16fd1dc36e5d)
 - [Query string (and other fields-within-fields) unrolling](http://rpubs.com/schnee/32988)
 - [Pre-processing Excel files before loading them into R](https://github.com/alkashef/cleaningexceldata)
+
+## Comprehensive Notes
+
+- Complete notes for [Getting and Cleaning Data](http://sux13.github.io/DataScienceSpCourseNotes/)

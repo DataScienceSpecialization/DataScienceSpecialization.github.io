@@ -20,3 +20,7 @@ permalink: /pml/
 ## Choosing a Machine Learning Model
 
 - [Comparing Supervised Learning Algorithms](http://www.dataschool.io/comparing-supervised-learning-algorithms/): Comparing 8 common supervised learning algorithms (for regression and classification) on 13 different dimensions.
+
+## Comprehensive Notes
+
+- Complete notes for [Practical Machine Learning](http://sux13.github.io/DataScienceSpCourseNotes/)

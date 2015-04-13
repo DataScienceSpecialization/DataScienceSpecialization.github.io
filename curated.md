@@ -34,6 +34,7 @@ permalink: /curated/
 
 ### Reproducible Research
 - [Markdown live demo](http://markdown-here.com/livedemo.html)
+- [Boosting Slides by Ron Meir] (https://github.com/Aratinga/Misc/blob/master/BoostingTutorial.pdf) 
 
 ### Textbooks
 - [OpenIntro textbook](https://www.openintro.org/stat/textbook.php)

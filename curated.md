@@ -22,6 +22,9 @@ permalink: /curated/
 - [The Lubridate Package](http://www.jstatsoft.org/v40/i03/paper)
 - [Google Developers R Programming Video Lectures](http://www.r-bloggers.com/google-developers-r-programming-video-lectures/)
 
+### Probability and Statistics
+
+- [Probability and Statistics Cookbook](http://matthias.vallentin.net/probability-and-statistics-cookbook/)
 
 ### GitHub
 

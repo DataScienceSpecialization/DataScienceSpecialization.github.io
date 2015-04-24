@@ -6,6 +6,8 @@ permalink: /toolbox/
 
 ## Command Line
 
+- [Working with files in Bash](http://edgarsh.es/ins/working-with-files-in-bash/)
+
 ## Git/GitHub
 
 - [Git & GitHub Video Playlist](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD) (also available for [download](https://drive.google.com/folderview?id=0BxRfg0msVmAoRlZFQjJ3T3VTOUE&usp=sharing) as mp4 files)

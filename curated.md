@@ -21,6 +21,8 @@ permalink: /curated/
 - [Try R](http://tryr.codeschool.com/)
 - [The Lubridate Package](http://www.jstatsoft.org/v40/i03/paper)
 - [Google Developers R Programming Video Lectures](http://www.r-bloggers.com/google-developers-r-programming-video-lectures/)
+- [awesome R](https://github.com/qinwf/awesome-R) - A curated list of awesome R frameworks, packages and software. 
+- [awesome machine learning](https://github.com/josephmisiti/awesome-machine-learning#r) - A curated list of awesome Machine Learning frameworks, libraries and software. 
 
 ### Probability and Statistics
 

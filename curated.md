@@ -52,8 +52,8 @@ permalink: /curated/
 
 ### Reproducible Research
 - [Markdown live demo](http://markdown-here.com/livedemo.html)
-- [Boosting Slides by Ron Meir] (https://github.com/Aratinga/Misc/blob/master/BoostingTutorial.pdf) 
-- 
+- [Boosting Slides by Ron Meir](https://github.com/Aratinga/Misc/blob/master/BoostingTutorial.pdf) 
+
 ### Machine Learning
 - [UC Irvine Machine Learning Data Repository](http://archive.ics.uci.edu/ml/)
 

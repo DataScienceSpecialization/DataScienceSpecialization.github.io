@@ -11,6 +11,7 @@ permalink: /rprog/
 - [Tutorial for those struggling with Programming Assignment 3](https://github.com/DanieleP/PA3-tutorial)
 - [PA1-test: `testthat`, Unit Tests for Programming Assignment 1](https://github.com/cbryant1000/pa1test)
 - [PA3-test: `testthat`, Unit Tests for Programming Assignment 3](https://github.com/cbryant1000/pa3test)
+- [Alternative submit script for Programming Assignment 1 that makes submitting more convenient by allowing selection of multiple parts plus prompting if user wants to submit another part before exiting](https://github.com/rchampoux/coursera/blob/master/rprog-scripts-submitscript1.R)
 
 
 ## R Language

@@ -10,7 +10,7 @@ permalink: /curated/
 - [Diving Into Data Science Flipboard](https://flipboard.com/@thiakx/diving-into-data-science-5823ectuy)
 - [OLAP Operation in R](http://architects.dzone.com/articles/olap-operation-r)
 - [Journal of Statistical Software: Tidy data](http://www.jstatsoft.org/v59/i10/paper)
-- [Verzani: simpleR – Using R for Introductory Statistics](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf/)
+- [Verzani: simpleR – Using R for Introductory Statistics](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
 - [Data Visualization packages](http://www.datavis.ca/R/)
 - [Visualization hints: plotting numeric data by groups](http://www.r-bloggers.com/visualization-series-insight-from-cleveland-and-tufte-on-plotting-numeric-data-by-groups/)
 - [Matrix rotation for image and contour plots in R](http://blog.snap.uaf.edu/2012/06/08/matrix-rotation-for-image-and-contour-plots-in-r/)

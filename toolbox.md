@@ -7,6 +7,7 @@ permalink: /toolbox/
 ## Command Line
 
 - [Working with files in Bash](http://edgarsh.es/ins/working-with-files-in-bash/)
+- [Mastering the command line, in one page](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md)
 
 ## Git/GitHub
 
@@ -17,4 +18,5 @@ permalink: /toolbox/
 - [Github Repo Tutorial How to fork a repo, download it to your local drive and commit changes ](https://www.youtube.com/watch?v=MY94AIplcaU)
 
 ## Comprehensive Notes
+
 - Complete notes for [The Data Scientist's Toolbox](http://sux13.github.io/DataScienceSpCourseNotes/)

@@ -7,7 +7,6 @@ permalink: /toolbox/
 ## Command Line
 
 - [Working with files in Bash](http://edgarsh.es/ins/working-with-files-in-bash/)
-- [Mastering the command line, in one page](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md)
 
 ## Git/GitHub
 

@@ -36,6 +36,7 @@ permalink: /curated/
 - [Google's R Style Guide](https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml)
 - [Tufte-style HTML in rmarkdown](http://sachsmc.github.io/tufterhandout/)
 - [Creating an R Package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
+- [R Packages (Hadley online book)](http://r-pkgs.had.co.nz/) - How to write your own R packages.
 - [Beautiful ggplot2 Cheatsheet](http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/)
 - [Intro to Graphics](http://bcb.dfci.harvard.edu/~aedin/courses/Bioconductor/2.Plotting.pdf)
 - [data.table cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)

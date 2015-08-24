@@ -16,11 +16,6 @@ permalink: /other/
 - [gitignore template for R](https://github.com/github/gitignore/blob/master/R.gitignore) (source:[gitignore](https://github.com/github/gitignore))
 - [Github Help - Using Git / Ignoring files](https://help.github.com/articles/ignoring-files/)
 
-### Deploying and sharing Shiny Apps with Docker
-- [Dockerize a Shiny App](http://www.flaviobarros.net/2015/04/30/dockerizing-a-shiny-app/)
-- [Git pushing Shiny Apps with Docker/Dokku](http://www.flaviobarros.net/2015/05/11/git-pushing-shiny-apps-with-docker-dokku/)
-- [Share your Shiny Apps with Docker and Kitematic](http://www.flaviobarros.net/2015/08/10/share-your-shiny-apps-with-docker-and-kitematic/)
-
 ## Troubleshooting
 - [Windows batch file to work around RStudio startup issues](https://github.com/stepds/contrib-DataScienceSpecialization/blob/master/README.md)
 
@@ -30,3 +25,8 @@ permalink: /other/
 - [Data Science Toolbox](http://datasciencetoolbox.org/) - A virtual environment that allows you to start doing data science in a matter of minutes.
 
 - [Virtual machine with RStudio server and github setup](https://github.com/tboloo/vagrant-rstudio) - A VirtualBox, Vagrant & chef-solo managed virtual machine which provides RStudio server with git & github setup
+
+## Deploying and sharing Shiny Apps with Docker
+- [Dockerize a Shiny App](http://www.flaviobarros.net/2015/04/30/dockerizing-a-shiny-app/)
+- [Git pushing Shiny Apps with Docker/Dokku](http://www.flaviobarros.net/2015/05/11/git-pushing-shiny-apps-with-docker-dokku/)
+- [Share your Shiny Apps with Docker and Kitematic](http://www.flaviobarros.net/2015/08/10/share-your-shiny-apps-with-docker-and-kitematic/)

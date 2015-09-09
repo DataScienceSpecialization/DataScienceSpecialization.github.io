@@ -15,6 +15,7 @@ permalink: /getclean/
 - [Pre-processing Excel files before loading them into R](https://github.com/alkashef/cleaningexceldata)
 - [Codebook template that can be used in the Getting and Cleaning Data project](https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41)
 - ["Real world" example - reading American Community Survey 2000 PUMS Data:](https://github.com/lgreski/acsexample) Demonstrates how to extract records of a given type from a data file containing multiple record types, and how to use an Excel-based code book to specify arguments for reading a fixed-width file.
+- [18 Months of CTA advice](https://thoughtfulbloke.wordpress.com/2015/08/31/hello-world)
 
 ## Comprehensive Notes
 

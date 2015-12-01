@@ -25,3 +25,7 @@ permalink: /pml/
 ## Comprehensive Notes
 
 - Complete notes for [Practical Machine Learning](http://sux13.github.io/DataScienceSpCourseNotes/)
+
+## Configuring Github Pages with RStudio for PML Project 
+
+- Step by step instructions to [Configure Github Pages with RStudio](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-ghPagesSetup.md) to support the PML course project. 

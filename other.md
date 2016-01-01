@@ -25,3 +25,8 @@ permalink: /other/
 - [Data Science Toolbox](http://datasciencetoolbox.org/) - A virtual environment that allows you to start doing data science in a matter of minutes.
 
 - [Virtual machine with RStudio server and github setup](https://github.com/tboloo/vagrant-rstudio) - A VirtualBox, Vagrant & chef-solo managed virtual machine which provides RStudio server with git & github setup
+
+## Deploying and sharing Shiny Apps with Docker
+- [Dockerize a Shiny App](http://www.rmining.net/2015/04/30/dockerizing-a-shiny-app/)
+- [Git pushing Shiny Apps with Docker/Dokku](http://www.rmining.net/2015/05/11/git-pushing-shiny-apps-with-docker-dokku/)
+- [Share your Shiny Apps with Docker and Kitematic](http://www.rmining.net/2015/08/10/share-your-shiny-apps-with-docker-and-kitematic/)

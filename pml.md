@@ -29,3 +29,7 @@ permalink: /pml/
 ## Configuring Github Pages with RStudio for PML Project 
 
 - Step by step instructions to [Configure Github Pages with RStudio](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-ghPagesSetup.md) to support the PML course project. 
+
+## Improving Runtime Performance of Caret 
+
+- Step by step instructions to [implement parallel processing in caret::train()](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-randomForestPerformance.md) on a random forest model, along with runtime performance analysis for a variety of laptops, ranging from an Intel Atom-based tablet to a quad-core i7 processor.  

@@ -22,6 +22,7 @@ permalink: /rprog/
 - [Some notes on the R Language](http://lopezrj.github.io)
 - [A Data Frame is Also a List](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/dataFrameAsList.md)
 - [S Objects, R Objects, and Lexical Scoping](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-lexicalScoping.md)
+- [Common R Mistakes: Overwriting Functions with Data Objects](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-overwritingRFunctions.md)
 
 
 ## R language cheatsheet
@@ -33,6 +34,7 @@ permalink: /rprog/
 - [Commercial Statistics Packages: An Historical Perspective](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statsPackagesHistory.md)
 - [Why is R More Difficult than SAS?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/whyIsRHarderThanSAS.md)
 - [SAS Experience: impediment to learning R?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/exampleSortRvsSAS.md)
+- [Thinking in R versus Thinking in SAS](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/exampleSortRvsSAS.md)
 
 ## Comprehensive Notes
 

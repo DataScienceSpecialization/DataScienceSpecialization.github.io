@@ -12,6 +12,7 @@ permalink: /statinf/
 - [Using MathJax with Discussion Forums, R Markdown, and Github Pages](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/mathjaxWithGithubMarkdown.md)
 - [Kable Tables with Data Frames](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/kableDataFrameTable.md) illustrates how to display a custom table in a `knitr()` document by creating a data frame to contain the information to be rendered with `kable()`.
 - [Interactive Confidence Interval Visualization](https://github.com/amcadie/interactive_CI)
+- [Installing MiKTeK on Windows 10 / Generate a PDF from knitr](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statinf-generatePDF.md)
 
 ## Comprehensive Notes
 

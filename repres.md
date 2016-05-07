@@ -9,6 +9,7 @@ permalink: /repres/
 - [Trends and severity of Data Breaches](http://rpubs.com/ww44ss/29389)
 - [Benefit-cost analysis of a park user fee](https://rstudio-pubs-static.s3.amazonaws.com/72135_dc45211d976842c2a9a8c8b5f2472ff0.html)
 - [Data Lake Integrity](http://rpubs.com/rshane/81297)
+- [ProjectTemplate in RStudio with Git](http://padamson.github.io/r/rstudio/projecttemplate/git/2016/01/17/projecttemplate-in-rstudio-with-git.html)
 
 ## Comprehensive Notes
 

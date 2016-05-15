@@ -31,6 +31,7 @@ permalink: /rprog/
 
 ## R and Commercial Statistics Packages
 
+- [R Onboarding for SAS Users](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-onboardingForSASUsers.md) Provides an overview and links to a variety of resources to help people with SAS experience make the transition to R
 - [Commercial Statistics Packages: An Historical Perspective](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statsPackagesHistory.md)
 - [Why is R More Difficult than SAS?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/whyIsRHarderThanSAS.md)
 - [SAS Experience: impediment to learning R?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/exampleSortRvsSAS.md)

@@ -23,6 +23,7 @@ permalink: /rprog/
 - [A Data Frame is Also a List](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/dataFrameAsList.md)
 - [S Objects, R Objects, and Lexical Scoping](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-lexicalScoping.md)
 - [Common R Mistakes: Overwriting Functions with Data Objects](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-overwritingRFunctions.md)
+- [Forms of the Extract Operator](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-extractOperator.md)
 
 
 ## R language cheatsheet

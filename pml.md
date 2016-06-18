@@ -22,9 +22,10 @@ permalink: /pml/
 
 - [Comparing Supervised Learning Algorithms](http://www.dataschool.io/comparing-supervised-learning-algorithms/): Comparing 8 common supervised learning algorithms (for regression and classification) on 13 different dimensions.
 
-## Comprehensive Notes
+## Content Related to the Lectures
 
 - Complete notes for [Practical Machine Learning](http://sux13.github.io/DataScienceSpCourseNotes/)
+- [Week 4: Combining Predictors -- Math Explained](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-combiningPredictorsBinomial.md)
 
 ## Configuring Github Pages with RStudio for PML Project 
 
@@ -32,4 +33,5 @@ permalink: /pml/
 
 ## Improving Runtime Performance of Caret 
 
-- Step by step instructions to [implement parallel processing in caret::train()](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-randomForestPerformance.md) on a random forest model, along with runtime performance analysis for a variety of laptops, ranging from an Intel Atom-based tablet to a quad-core i7 processor.  
+- Step by step instructions to [implement parallel processing in caret::train()](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-randomForestPerformance.md) on a random forest model, along with runtime performance analysis for a variety of laptops, ranging from an Intel Atom-based tablet to a quad-core i7 processor. 
+

@@ -8,6 +8,8 @@ permalink: /rprog/
 
 - [Strategy for Coding the Programming Assignments](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/makeItRun.md)
 - [Tutorial for those struggling with Programming Assignment 1](https://github.com/derekfranks/practice_assignment)  
+- [Breaking Down pollutantmean](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-discussPollutantmean.md)
+- [A SAS Version of pollutantmean?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-pollutantmeanSASVersion.md)
 - [Tutorial for those struggling with Programming Assignment 2](https://github.com/DanieleP/PA2-clarifying_instructions)
 - [Tutorial for those struggling with Programming Assignment 3](https://github.com/DanieleP/PA3-tutorial)
 - [PA1-test: `testthat`, Unit Tests for Programming Assignment 1](https://github.com/cbryant1000/pa1test)

@@ -11,6 +11,7 @@ permalink: /other/
 - [Installing Some Basic R Packages in Ubuntu; Ibrahim El Merehbi](http://elmerehbi.wordpress.com/2014/09/09/installing-some-basic-r-packages-in-ubuntu)
 - [Using Projects in RStudio](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 - [Using Version Control with RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+- [Using R behind HTTP/HTTPS Proxy](https://support.rstudio.com/hc/en-us/articles/200488488-Configuring-R-to-Use-an-HTTP-or-HTTPS-Proxy)
 
 ### Ignoring R & RStudio files
 - [gitignore template for R](https://github.com/github/gitignore/blob/master/R.gitignore) (source:[gitignore](https://github.com/github/gitignore))

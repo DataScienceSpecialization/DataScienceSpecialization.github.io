@@ -14,6 +14,7 @@ permalink: /statinf/
 - [Interactive Confidence Interval Visualization](https://github.com/amcadie/interactive_CI)
 - [Installing MiKTeK on Windows 10 / Generate a PDF from knitr](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statinf-generatePDF.md)
 - [Power calculations: optimal szmple size](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statinf-optimalSampleSize.md)
+- [Permutation Tests Explained](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statinf-permutationTests.md)
 
 ## Comprehensive Notes
 

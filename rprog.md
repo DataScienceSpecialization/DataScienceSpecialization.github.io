@@ -16,6 +16,7 @@ permalink: /rprog/
 - [PA3-test: `testthat`, Unit Tests for Programming Assignment 3](https://github.com/cbryant1000/pa3test)
 - [Alternative submit script for Programming Assignment 1 that makes submitting more convenient by allowing selection of multiple parts plus prompting if user wants to submit another part before exiting](https://github.com/rchampoux/coursera/blob/master/rprog-scripts-submitscript1.R)
 - [Grading the SHA-1 Hash Code](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-gradeSHA1hash.md)
+- [Assignment 2: Demystifying makeVector](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-breakingDownMakeVector.md)
 -  [Assignment 2: makeCacheMatrix as an Object](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprogAssignment2Prototype.md)
 
 

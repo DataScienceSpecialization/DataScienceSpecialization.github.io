@@ -1,33 +1,39 @@
 ---
-layout: page
-title: R Programming
+title: "R Programming"
 permalink: /rprog/
+layout: page
 ---
+
+## Getting Started
+- [Resources for R Programming](http://bit.ly/2dhZ8Dy)
+- [References for R Programming](http://bit.ly/2b8AxhF)
+- [Data Science Specialization Value Proposition](http://bit.ly/2j3EcCn)
+- [R Onboarding for SAS Users](http://bit.ly/2dr7yum)
 
 ## Programming Assignments
 
-- [Strategy for Coding the Programming Assignments](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/makeItRun.md)
+- [Strategy for Coding the Programming Assignments](http://bit.ly/2ddFh9A)
 - [Tutorial for those struggling with Programming Assignment 1](https://github.com/derekfranks/practice_assignment)  
-- [Breaking Down pollutantmean](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-discussPollutantmean.md)
-- [A SAS Version of pollutantmean?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-pollutantmeanSASVersion.md)
+- [Breaking Down pollutantmean](http://bit.ly/2cHyiCl)
+- [A SAS Version of pollutantmean?](http://bit.ly/2d3DR4e)
 - [Tutorial for those struggling with Programming Assignment 2](https://github.com/DanieleP/PA2-clarifying_instructions)
 - [Tutorial for those struggling with Programming Assignment 3](https://github.com/DanieleP/PA3-tutorial)
 - [PA1-test: `testthat`, Unit Tests for Programming Assignment 1](https://github.com/cbryant1000/pa1test)
 - [PA3-test: `testthat`, Unit Tests for Programming Assignment 3](https://github.com/cbryant1000/pa3test)
 - [Alternative submit script for Programming Assignment 1 that makes submitting more convenient by allowing selection of multiple parts plus prompting if user wants to submit another part before exiting](https://github.com/rchampoux/coursera/blob/master/rprog-scripts-submitscript1.R)
-- [Grading the SHA-1 Hash Code](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-gradeSHA1hash.md)
-- [Assignment 2: Demystifying makeVector](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-breakingDownMakeVector.md)
--  [Assignment 2: makeCacheMatrix as an Object](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprogAssignment2Prototype.md)
+- [Grading the SHA-1 Hash Code](http://bit.ly/2iUWoB6)
+- [Assignment 2: Demystifying makeVector](http://bit.ly/2bTXXfq)
+-  [Assignment 2: makeCacheMatrix as an Object](http://bit.ly/2byUe4e)
 
 
 ## R Language
 
 - [Some notes on the R Language](http://lopezrj.github.io)
-- [A Data Frame is Also a List](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/dataFrameAsList.md)
-- [S Objects, R Objects, and Lexical Scoping](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-lexicalScoping.md)
-- [Common R Mistakes: Overwriting Functions with Data Objects](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-overwritingRFunctions.md)
-- [Forms of the Extract Operator](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-extractOperator.md)
-- [Creative Use of R: Downloading Course Lectures](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-downloadingLectures.md) Article illustrating how to use R to automate the download of lectures from *Data Science Specialization* courses, such as *R Programming*. Techniques used in this article are helpful to make research reproducible, as required for courses like *Getting and Cleaning Data* and *Reproducible Research*. 
+- [A Data Frame is Also a List](http://bit.ly/2fmMRAp)
+- [S Objects, R Objects, and Lexical Scoping](http://bit.ly/2dtOSXi)
+- [Common R Mistakes: Overwriting Functions with Data Objects](http://bit.ly/2i3gmoA)
+- [Forms of the Extract Operator](http://bit.ly/2bzLYTL)
+- [Creative Use of R: Downloading Course Lectures](http://bit.ly/2bGlI7R) Article illustrating how to use R to automate the download of lectures from *Data Science Specialization* courses, such as *R Programming*. Techniques used in this article are helpful to make research reproducible, as required for courses like *Getting and Cleaning Data* and *Reproducible Research*.
 
 
 ## R language cheatsheet
@@ -36,11 +42,10 @@ permalink: /rprog/
 
 ## R and Commercial Statistics Packages
 
-- [R Onboarding for SAS Users](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-onboardingForSASUsers.md) Provides an overview and links to a variety of resources to help people with SAS experience make the transition to R
-- [Commercial Statistics Packages: An Historical Perspective](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statsPackagesHistory.md)
-- [Why is R More Difficult than SAS?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/whyIsRHarderThanSAS.md)
-- [SAS Experience: impediment to learning R?](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/exampleSortRvsSAS.md)
-- [Thinking in R versus Thinking in SAS](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/exampleSortRvsSAS.md)
+- [R Onboarding for SAS Users](http://bit.ly/2dr7yum) Provides an overview and links to a variety of resources to help people with SAS experience make the transition to R
+- [Commercial Statistics Packages: An Historical Perspective](http://bit.ly/2fPj2qN)
+- [Why is R More Difficult than SAS?](http://bit.ly/2erxk3A)
+- [Thinking in R versus Thinking in SAS](http://bit.ly/2cH3u8x)
 
 ## Comprehensive Notes
 

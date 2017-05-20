@@ -15,6 +15,7 @@ layout: page
 - [Strategy for Coding the Programming Assignments](http://bit.ly/2ddFh9A)
 - [Tutorial for those struggling with Programming Assignment 1](https://github.com/derekfranks/practice_assignment)  
 - [Breaking Down pollutantmean](http://bit.ly/2cHyiCl)
+- [Assignment 1: A More Elegant Solution](http://bit.ly/2kwBBlK)
 - [A SAS Version of pollutantmean?](http://bit.ly/2d3DR4e)
 - [Tutorial for those struggling with Programming Assignment 2](https://github.com/DanieleP/PA2-clarifying_instructions)
 - [Tutorial for those struggling with Programming Assignment 3](https://github.com/DanieleP/PA3-tutorial)
@@ -23,7 +24,7 @@ layout: page
 - [Alternative submit script for Programming Assignment 1 that makes submitting more convenient by allowing selection of multiple parts plus prompting if user wants to submit another part before exiting](https://github.com/rchampoux/coursera/blob/master/rprog-scripts-submitscript1.R)
 - [Grading the SHA-1 Hash Code](http://bit.ly/2iUWoB6)
 - [Assignment 2: Demystifying makeVector](http://bit.ly/2bTXXfq)
--  [Assignment 2: makeCacheMatrix as an Object](http://bit.ly/2byUe4e)
+- [Assignment 2: makeCacheMatrix as an Object](http://bit.ly/2byUe4e)
 
 
 ## R Language
@@ -33,7 +34,11 @@ layout: page
 - [S Objects, R Objects, and Lexical Scoping](http://bit.ly/2dtOSXi)
 - [Common R Mistakes: Overwriting Functions with Data Objects](http://bit.ly/2i3gmoA)
 - [Forms of the Extract Operator](http://bit.ly/2bzLYTL)
+- [Functions to Sort Data Frames](http://bit.ly/2dxItzw)
 - [Creative Use of R: Downloading Course Lectures](http://bit.ly/2bGlI7R) Article illustrating how to use R to automate the download of lectures from *Data Science Specialization* courses, such as *R Programming*. Techniques used in this article are helpful to make research reproducible, as required for courses like *Getting and Cleaning Data* and *Reproducible Research*.
+- [Lexical Scoping and Statistical Computing](http://bit.ly/2cmqAPy) Article by Robert Gentleman and Ross Ihaka at the University of Auckland describing how lexical scoping works, and why it is valuable in statistical computing.
+- [Data Science Job Report 2017: R Passes SAS, But Python Leaves Them Both Behind](http://bit.ly/2oCHulX) Bob Muenchen's take on the job market for various data science langauges. 
+
 
 
 ## R language cheatsheet

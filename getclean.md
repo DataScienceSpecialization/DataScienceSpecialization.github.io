@@ -16,6 +16,10 @@ permalink: /getclean/
 - [Codebook template that can be used in the Getting and Cleaning Data project](https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41)
 - ["Real world" example - reading American Community Survey 2000 PUMS Data:](https://github.com/lgreski/acsexample) Demonstrates how to extract records of a given type from a data file containing multiple record types, and how to use an Excel-based code book to specify arguments for reading a fixed-width file.
 - [18 Months of CTA advice](https://thoughtfulbloke.wordpress.com/2015/08/31/hello-world)
+- [Common Problems: Quiz 1 - Missing Java Runtime](http://bit.ly/2jjtyXM) Explains how to solve the problem of a missing Java Runtime for the question that requires students to process a Microsoft Excel spreadsheet. 
+- [Strategy for Reading Files & APIs / Quiz 2](http://bit.ly/2e4L5oF)
+- [Common Problems: Quiz 2 - sqldf() driver fails to connect](http://bit.ly/2kD2KTY)
+- [Tutorial: Downloading Files](http://bit.ly/2iP2suj) Illustrates various ways of downloading files, including binary and text files. 
 
 ## Comprehensive Notes
 

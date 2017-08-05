@@ -5,6 +5,7 @@ permalink: /statinf/
 ---
 
 - [Why degrees of freedom decrease for sample variance](https://github.com/Manu58/bias/blob/master/bias.pdf)
+[CONCEPTS: Calculating Area for a Point on the Normal Curve](http://bit.ly/2hw5AMF) Reviews the mathematics that explain why one cannot calculate the exact proability for a specific value within a distribution for a continuous variable, and illustrates how to calculate a quantile for a point on the curve. 
 - [Analysis of exponential distribution of births data set from the CDC](https://gist.github.com/ProgramErgoSum/5316008387746fcd84de)
 - [Exponential Distribution / Central Limit Theorem - Assignment Checklist](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/statinf-expDistChecklist.md)
 - [ToothGrowth Analysis - Assignment Checklist](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/ToothGrowthChecklist.md)

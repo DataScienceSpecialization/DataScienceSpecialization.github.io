@@ -54,4 +54,6 @@ layout: page
 
 ## Comprehensive Notes
 
-- Complete notes for [R Programming](http://sux13.github.io/DataScienceSpCourseNotes/)
+- [Complete notes](http://sux13.github.io/DataScienceSpCourseNotes/) for R Programming
+- [FAQ](https://corytu.github.io/Coursera-R-Mentoring/) on R Programming course forum
+- [Tutorial slides](https://corytu.github.io/R-Language-Exhibition/Docs/R-Tutorial.html) covering materials of the first two weeks of R Programming

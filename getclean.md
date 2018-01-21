@@ -20,6 +20,7 @@ permalink: /getclean/
 - [Strategy for Reading Files & APIs / Quiz 2](http://bit.ly/2e4L5oF)
 - [Common Problems: Quiz 2 - sqldf() driver fails to connect](http://bit.ly/2kD2KTY)
 - [Tutorial: Downloading Files](http://bit.ly/2iP2suj) Illustrates various ways of downloading files, including binary and text files. 
+- [Creating dataframes from xml data](https://www.dropbox.com/s/7bbzzp4bwsmfl5y/CreatingDataframesfrom%20XmlFiles.odt?dl=0)
 
 ## Comprehensive Notes
 

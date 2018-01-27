@@ -25,3 +25,4 @@ The [Data Science Specialization](https://www.coursera.org/specialization/jhudat
 - [stepds](https://github.com/stepds)
 - Bastiaan Quast
 - [Xing Su](http://sux13.github.io/DataScienceSpCourseNotes/)
+- [Edmund julian Ofilada](https://github.com/DocOfi)

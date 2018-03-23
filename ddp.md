@@ -18,6 +18,7 @@ permalink: /ddp/
 - [Git pushing Shiny Apps with Docker/Dokku](http://www.rmining.net/2015/05/11/git-pushing-shiny-apps-with-docker-dokku/)
 - [Share your Shiny Apps with Docker and Kitematic](http://www.rmining.net/2015/08/10/share-your-shiny-apps-with-docker-and-kitematic/)
 - [Shinyapps.io: Configuring Application Timeout](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/dataProd-shinyTimeoutConfig.md)
+- [Plotting Natural Disasters](http://www.rpubs.com/DocOfi/367052)
 
 ## Comprehensive Notes
 

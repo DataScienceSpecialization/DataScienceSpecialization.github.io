@@ -1,0 +1,7 @@
+I have done some work after Course 4 (Exploratory Data Analysis) that might interest someone, or be useful in future implementations of the course.
+
+This work consists of two simple functions that do some 'quick and dirty' EDA plots of air pollution, given a state/county code combo in the US. 
+
+GitHub repo with this work: 
+
+https://github.com/BigBangData/ExploratoryDataAnalysis

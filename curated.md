@@ -16,6 +16,7 @@ permalink: /curated/
 - [Matrix rotation for image and contour plots in R](http://blog.snap.uaf.edu/2012/06/08/matrix-rotation-for-image-and-contour-plots-in-r/)
 - [Fig Data: 11 Tips on How to Handle Big Data in R (and 1 Bad Pun)](http://theodi.org/blog/fig-data-11-tips-how-handle-big-data-r-and-1-bad-pun)
 - [Data from 538](https://github.com/fivethirtyeight/data)
+- [Getting started with python notebook](https://medium.com/@adhira_deo/the-environment-for-building-machine-learning-models-a1552116b355)
 
 ### Command Line
 

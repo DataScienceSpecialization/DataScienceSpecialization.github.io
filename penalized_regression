@@ -1,0 +1,13 @@
+## Penalized Regression: Ridge and LASSO
+
+In the lecture on Regularized Regression under the Practical Machine Learning course of Coursera's Data Science Specialization, we were introduced to the theoretical concepts of two penalized regression models: ridge and LASSO (Least Absolute Shrinkage and Selection Operator).  
+
+**This is an attempt to:**  
+
+1. Support that theory with a practical example using the ``mtcars`` dataset and the ``caret package`` to obtain a visual understanding of the concept of shrinking coefficients.  
+
+2. Compare goodness of fit on training data and prediction accuracy on test data across linear model (LM), ridge, and LASSO. 
+
+3. Explore the goodness of fit and prediction accuracy implications of feature selection in LM using LASSO. 
+
+[github repo for content on ridge and LASSO](https://github.com/kumar-navya/DS_toshare/tree/master/Supplement_Penalized_Regression)

@@ -1,0 +1,623 @@
+---
+title: "Statistical Inference for proportions"
+author: "Alessandro Vasta"
+date: "Dec 4th 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "")
+```
+
+## Overview
+In this paper, I would like to bring to your attention an alternative approach to what is provided by the standard R library "stats" regarding statistical inference on proportion. Concerning the "stats" library I'll refer mainly the function binom.test() rather than prop.test() since I didn't notice a significant difference between the two, while I noticed a significant difference between the proposed approach and both of them. Moreover I took as probability model the binomial distribution.
+
+
+## Test_prop() function
+test_prop() is one of the functions developed in this work. It is thought to provide interval limits expressed as maximum (n_up) and/or minumum (n_l) numbers of occurrences in order to accept or reject a null hypothesis represented by a proportion with the probability p~0~. Of course those numbers depends on the number of trials (N) that have been performed.
+In addition this function take into consideration also an alternative proportion with probability p~1~ to be related to a statistical power for a possible hypothesis test.
+So a conceptual initial difference with the R function binom.test() is that test_prop() is thought to determine intervals for hypothesis test rather than confidence intervals. Nevertheless binom.test() in next Monte Carlo simulations for comparison purposes, will be used in a compatible way assuming the ratio occurrences / trials matching p~0~.
+
+
+### Data input list
+
+- p~0~ is the event probability correspondent to the null hypothesis Hp~0~ of the test.
+- p~1~ is the event probability correspondent to the alternative hypothesis Hp~1~ of the test. 
+- conf = 1 - $\alpha$ is the confidence of the test where $\alpha$, the significance level, is the type I error, that is the probability to reject the null hypothesis when the null hypothesis is true (p = p~0~).
+- power = 1 - $\beta$, is the input power for the test used to calculate p~1~\@pow that is the event probability p~1~ correspondent to selected input power. $~~\beta$ is the Type II error, that is the probability to accept the null hypothesis when the real event probability is p~1~\@pow, so power is the minimum probability to detect a proportion p $\ge$ p~1~\@pow if p~1~ > p~0~ or p $\le$ p~1~\@pow if p~1~ < p~0~.
+- N is the number of trials. 
+- steps are the number of lines of the output table where all the outputs are calculated with different value for N. Each line refer a number of trials starting from the top = $N*2^{i-1}$ if the parameter inc = -1, while N = N + inc*(i-1) if inc is an integer > 0, with i = 1,...,steps = line index.
+- inc [integer] is the incremental step to be performed according what specified in the above bullet point.
+- side indicates the alternative hypothesis and must be one of "two", "greater" or "less"
+
+### Data output list
+
+The output data provided in a data frame format for the above inputs are:
+
+- N is the number of trials. 
+- n_l is the minimum number of events over N trials that shall be collected without rejecting the null hypothesis. If this limit will be exceeded the null hypothesis (p = p~0~) shall be rejected.
+- n_up is the maximum number of events over N trials that can be collected without rejecting the null hypothesis. If this limit will be exceeded the null hypothesis (p = p~0~) shall be rejected.
+- pr_l(%) is the percentage proportion correspondent to the proportion n_l/N
+- pr_up(%) is the percentage proportion correspondent to the proportion n_up/N
+- conf(%) is the real output confidence of the test that is different from what specified as input because of the quantization error of the number of events (n) that are constrained to be integers.
+- pwr%\@p1= ... %  is the effective statistical power of the test calculated with an effect size equal to the input p~1~. This could be a small value for the lowest values of N. (see below the data tables).
+- p1%\@pwr ... % is the effect size p~1~ to allow the statistical power specified in input data. 
+
+So, this is the R code for the function:
+
+
+```{r}
+test_prop <- function(conf,N,p0,p1,power,steps,inc = -1,side = "less") {
+    conf_int <- data.frame(N = 0, n_l = NA, n_up = NA, prop_l = NA, prop_up = NA,
+                           conf = 0, power = 0, p1.pow = 0) 
+    names(conf_int)[2] <- " n_l"
+    names(conf_int)[3] <- " n_up"
+    names(conf_int)[4] <- " pr_l(%)"
+    names(conf_int)[5] <- " pr_up(%)"
+    names(conf_int)[6] <- " conf(%)"
+    names(conf_int)[7] <- paste(" pwr%@p1=",as.character(p1*100),"%")
+    names(conf_int)[8] <- paste(" p1%@pwr",as.character(power*100),"%")
+    alpha <- 1 - conf
+    conf2 <- conf
+    accuracy <- 26
+    if (side == "two") {
+        conf <- 1 - alpha/2
+        side_l <- c(T,T)
+    } else if(side == "less") side_l <- c(F,T)
+    else side_l <- c(T,F)
+    
+    if (side_l[1] & side_l[2]) conf <- 1 - alpha/2
+    for (i in 1:steps) {
+        if(inc == -1) {
+            Nx <- N*2^(i-1)
+        } else Nx <- N + inc*(i - 1)
+        
+        # n_l is the minimum number of events that does not reject Hp0 (p0)
+        # n_up is the maximum number of events that does not reject Hp0 (p0)
+        if(side_l[1]) {
+            n_l <- qbinom(conf,Nx,p0,lower.tail = FALSE)
+            if(n_l == 0) stop("(*1) Low side test not possible: 
+                              Low Number of trials")
+            alpha2 <- pbinom(n_l,Nx,p0)
+            if(side_l[2]) n_l <- n_l + 1
+            conf2 <- 1 - (alpha -alpha2)
+            if (conf2 >= 1) conf2 <- (1 - alpha/100)
+        } else n_l <- NA
+        if(side_l[2]) n_up <- qbinom(conf2,Nx,p0) else n_up <- NA
+        # prop_xx are the min/max proportion allowed
+        if(side_l[1]) prop_l <- round(((n_l)/Nx)*100,digits = 4) else prop_l <- NA
+        if(side_l[2]) prop_up <- round((n_up/Nx)*100,digits = 4) else prop_up <- NA
+        # conf_r is the real confidence after the implementation of the test
+        if (side_l[1] & side_l[2]) {
+            conf_r <- round((pbinom(n_up,Nx,p0) - pbinom(n_l-1,Nx,p0))*100,
+                            digits = 2)
+        } else if (side_l[2]) {
+            conf_r <- round(pbinom(n_up,Nx,p0)*100,digits = 2)
+        } else {
+            conf_r <- round((1-pbinom(n_l-1,Nx,p0))*100, digits = 2)
+        }
+        # This condition is satisfied when a Low side detection is not possible
+        if (conf_r/((1-alpha)*100) < 0.9) {
+            stop("(*2) Low side test not possible: Low Number of trials")
+        }
+        # real test power at input p1 
+        if(side_l[2] && (p1 > p0)) {
+            power_r <- round(100*(1-pbinom(n_up,Nx,p1)),digits = 2)
+        } else if (side_l[1] && (p1 < p0)) {
+            power_r <- round(100*(pbinom(n_l-1,Nx,p1)),digits = 2)
+        } else stop("side and p1 are not consistent")
+        
+        # calculation of p1 correspondent to the input power
+        p1_pow <- 0.5
+        p1_inc <- 0.25
+        iter_for_accuracy <- 0
+        while (iter_for_accuracy < accuracy) {
+            iter_for_accuracy <- iter_for_accuracy + 1
+            if(p1 > p0) {
+                powerx <- (1 - pbinom(n_up,Nx,p1_pow))
+            } else {
+                powerx <- pbinom(n_l-1,Nx,p1_pow)
+            }
+             
+            if (powerx > power) {
+                p1_pow <- p1_pow - p1_inc*sign(p1-p0)
+            } else {
+                p1_pow <- p1_pow + p1_inc*sign(p1-p0)
+            }
+            p1_inc <- p1_inc / 2
+        }
+        p1_pow <- round(p1_pow*100, digits = 4)
+        conf_int[i,] <- c(Nx, n_l,n_up, prop_l,prop_up, conf_r, power_r, p1_pow)
+    }
+    conf_int
+}
+```
+
+\newpage
+### Data out examples
+
+In this first case we'll see as the option inc = -1 could provide a way to gain some level of awareness regarding the approximated sample size N needed to achieve an expected power level (pwr%\@p1). Moreover, it is possible to see the extent of the alternative hypothesis p1 to be detected with the desired input power (p1(%)\@pwr).
+
+```{r}
+N <- 50
+inc <- -1
+steps <- 12    
+conf <- 0.95
+power <- 0.95
+p0 <- 0.0005 
+p1 <- 0.001 
+side <- "less"
+
+test_prop(conf,N,p0,p1,power,steps,inc,side)
+```
+
+Another way to use this function is with constant increment, may be when is clear approximately the value of N.  In this case, a plot of confidence and a power trends could be more effective.
+Let's consider the following inputs:
+
+```{r}
+N <- 425
+steps <- 100
+conf <- 0.95
+p0 <- 0.05
+p1 <- 0.08
+power <- 0.85
+side <- "less"
+inc <- 1
+```
+
+And this is the output 
+
+```{r, echo=FALSE}
+dataout <- test_prop(conf,N,p0,p1,power,steps,inc,side)
+
+plot(dataout$N,dataout$` conf(%)`,type = "l",ylim = c(power*100-10,100),
+     main = paste("case p0 = ", as.character(p0*100),"% & p1 = ",
+                  as.character(p1*100),"%  conf =",as.character(conf*100),"%"),
+                xlab = "N",ylab = "Confidence & Power %")
+lines(dataout$N,dataout[,7], col = "red")
+abline(h=power*100,lty = 2)
+abline(h=conf*100,lty = 2)
+abline(v=484, lty=3, col="black")
+text(440,98,"Confidence")
+text(440,83,"Power",col = "red")
+text(484,75,"N = 484 ->  <- Solution", col = "black",cex = 0.8)
+```
+
+The steps in the above  saw-tooth lines are related to the change of n_up to the next integer value. So, confidence and power are far to be continuous and monotonic and the analysis of this trend has been the conceptual base for the implementation of the next function, that is: the determination of the minimum number of trials (the sample size), given confidence, power, p~0~ and p~1~.
+
+## The ss_prop() function
+
+Referring the previous plot we can see that a solution matching a specific value for power and confidence, like in the example with power = 85% and confidence = 95%, does not exist. Nevertheless with the approximation forced by integers quantization we could find a solution that best approximate the power and confidence goals.
+It's worth noting that this potential solution is not unique, in fact, identifying these solutions with the intersection of power with the horizontal line 85%, for the reported example, there are 7 possible solutions fulfilling this choice.  Obviously what we are looking for is the one with the lower N.
+This task is achieved by the following function starting with the a low value for N initialized at 70%, the solution provided by the normal approximation. The first part of the algorithm make N increasing with incremental values such that all iteration step could match a power spike. This first phase end as soon as the first power spike cross the power goal. If the current pre spike segment is increasing, a bisection method based algorithm move N backward up to the power goal crossing.
+This approach achieves the lowest N satisfying the constraints: confidence $\ge$ confidence set and power $\ge$ power set.
+
+this is the R code for the function:
+```{r, echo=FALSE}
+# Sample size determination for proportion function
+# based on binomial distribution
+
+# peak detect function
+
+peak_det_p0p1 <- function(N,conf,p0, k) {
+    N <- N + 1
+    n <- qbinom(conf,N,p0)
+    dN <- 2^k
+    iter_for_k <- 0
+    while(iter_for_k <= k) {
+        nx <- qbinom(conf,N,p0)
+        iter_for_k <- iter_for_k + 1
+        if (nx > n) {
+            N <- N - dN 
+        } else N <- N + dN
+        dN <- dN/2
+    }
+    nx <- qbinom(conf,N,p0)
+    if (nx > n) N <- N - 1
+    N
+}
+
+
+peak_det_p1p0 <- function(N,conf,p0, k) {
+    N <- N + 1
+    n <- qbinom(conf,N,p0,lower.tail = FALSE)
+    dN <- 2^k
+    iter_for_k <- 0
+    while(iter_for_k <= k) {
+        nx <- qbinom(conf,N,p0,lower.tail = FALSE)
+        iter_for_k <- iter_for_k + 1
+        if (nx > n) {
+            N <- N - dN 
+        } else N <- N + dN
+        dN <- dN/2
+    }
+    nx <- qbinom(conf,N,p0,lower.tail = FALSE)
+    if (nx <= n) N <- N + 1
+    N
+}
+
+# function for calculation of interval limits and power 
+pwr_calc <- function(conf,N,p0,p1,power,side = "less") {
+    conf_int <- data.frame(N = 0, n_l = NA, n_up = NA, prop_l = NA, prop_up = NA,
+                           conf = 0, power.P.1 = 0) 
+    names(conf_int)[2] <- " n_l"
+    names(conf_int)[3] <- " n_up"
+    names(conf_int)[4] <- " pr_l(%)"
+    names(conf_int)[5] <- " pr_up(%)"
+    names(conf_int)[6] <- " conf(%)"
+    names(conf_int)[7] <- "power(%)"
+    alpha <- 1 - conf
+    side_l <- c(F,F)
+    if (side == "two") {
+        conf <- 1 - alpha/2
+        side_l <- c(T,T)
+    } else if(side == "less") side_l <- c(F,T)
+    else side_l <- c(T,F)
+    # n_up is the maximum number of failure that does not reject Hp0 (p0)
+    if(side_l[1]) {
+        n_l <- qbinom(conf,N,p0,lower.tail = FALSE)
+        alpha2 <- pbinom(n_l,N,p0)
+        if(side_l[2]) n_l <- n_l + 1
+        conf <- 1 - (alpha -alpha2)
+        if (conf >= 1) conf <- (1 - alpha/100)
+    } else n_l <- NA
+    if(side_l[2]) n_up <- qbinom(conf,N,p0) else n_up <- NA
+    # prop_up is the maximum proportion allowed
+    if(side_l[1]) prop_l <- round(((n_l)/N)*100,digits = 4) else prop_l <- NA
+    if(side_l[2]) prop_up <- round((n_up/N)*100,digits = 4) else prop_up <- NA
+    # conf_r is the real confidence after the implementation of the test
+    if (side_l[1] & side_l[2]) {
+        conf_r <- round((pbinom(n_up,N,p0) - pbinom(n_l-1,N,p0))*100,
+                        digits = 2)
+    } else if (side_l[2]) {
+        conf_r <- round(pbinom(n_up,N,p0)*100,digits = 2)
+    } else {
+        conf_r <- round((1-pbinom(n_l-1,N,p0))*100, digits = 2)
+    }
+    # This condition is satisfied when a Low side detection is not possible
+    if (conf_r/((1-alpha)*100) < 0.99) {
+        stop("Low side test not possible")
+    }
+    # real test power at input p1 
+    if(side_l[2] && (p1 > p0)) {
+        power_r <- round(100*(1-pbinom(n_up,N,p1)),digits = 2)
+    } else if (side_l[1] && (p1 < p0)) {
+        power_r <- round(100*(pbinom(n_l-1,N,p1)),digits = 2)
+    } else stop("side and p1 are not consistent")
+    
+    conf_int[1,] <- c(N, n_l,n_up, prop_l,prop_up, conf_r, power_r)
+    conf_int <- cbind(conf_int,side)
+    names(conf_int)[8] <- "side"
+    conf_int
+}
+```
+
+```{r}
+# function for sample size determination 
+ss_prop <- function(p0,p1,conf,power,side) {
+    if(conf < 0.6) stop("Confidence too low (< 60%) ")
+    if(power < 0.6) stop("Power too low (< 60%) ")
+    alpha <- 1 - conf
+    beta <- 1 - power
+    if (side == "two") alpha <- alpha/2
+    Max_iter <- 10000
+    n_iter <- 0
+    # Nr = sample size aproximation based on normal distribution
+    Nr <- ((qnorm(alpha,lower.tail = F)*sqrt(p0*(1-p0))+
+                qnorm(beta,lower.tail = F)*sqrt(p1*(1-p1)))/abs(p1-p0))^2
+    # N => first sample size initialization for next iterations
+    # This is a starting point with a power always lower than the power set
+    N <- round(Nr*0.7,digits = 0)
+    k <- round(log2(Nr*0.4),digits =0)
+    
+    # first iteration loop by increasing N values with step calculated by peak_det_xx
+    pwr <- pwr_calc(conf,N,p0,p1,power,side)
+    while ((pwr[1,7] < power*100) & (n_iter < Max_iter)) {
+        if(side == "less") {
+            N <- peak_det_p0p1(N,conf,p0,k)
+        } else {N <- peak_det_p1p0(N,conf,p0,k)}
+        pwr <- pwr_calc(conf,N,p0,p1,power,side)
+        n_iter <- n_iter + 1
+    }
+    if (n_iter >= Max_iter) stop("Algorithm not convergent: p0 & p1 too close")
+    
+    # 2nd iteration loop: Active only in a local interval when power(N) is increasing
+    # This loop find the minimum N satisfying confidence > set & power > set
+    k <- round(log2(N*0.3),digits =0)
+    dN <- 2^k
+    iter_for_k <- 0
+    while (iter_for_k <=k) {
+        if (pwr[1,7] > power*100) {
+            N <- N - dN
+        } else N <- N + dN
+        pwr <- pwr_calc(conf,N,p0,p1,power,side)
+        iter_for_k <- iter_for_k +1
+        dN <- dN / 2
+    }
+    if(pwr[1,7] < power*100) N <- N + 1
+    pwr <- pwr_calc(conf,N,p0,p1,power,side)
+    
+    if(pwr[1,7] > power*120 ) stop("Unsuitable parameters setting")
+    pwr
+}
+```
+ 
+and the sample size calculation for the last example, where p~0~ = 5% and p~1~ = 8%, confidence = 95% and power = 85% is given by:
+```{r}
+ss_prop(p0,p1,conf,power,side)
+```
+Note: the input and output data list have the same meaning described for function test_prop(). Furthermore, this function provides in a single step, the sample size N and the test limits n_l and n_up to implement the test with the required input p~0~, p~1~, confidence and power.
+
+## Monte Carlo simulations and comparison with R functions
+
+The following tables show the simulations with the binomial distribution function rbinom() performed with 1,000,000 observations for each presented case.
+In the tables below the meanings of the output data is given by the following notes:
+
+- N is the number of trials simulated 1 million times, that is with the function rbinom(1e6,N,p0) for Hp~0~ data stream (to verify the confidence) and rbinom(1e6,N,p1) for Hp~1~ data stream (to verify the power).
+- p0(%) is the percentage probability of event occurrence for Hp~0~ simulation function, (as above mentioned) and, at the same time, the input for test_prop() and binom.test() for the calculation of interval acceptance limits n_l, n_up.
+- p1(%) is the percentage probability of event occurrence for Hp~1~ simulation function, (as above mentioned) and, at the same time, the input for ss_prop() and power.prop.test() to determine the sample size N. p1(%), in any case, is always used in simulation to calculate the effective test power, even in all cases where N is not determined by power considerations.
+- co(%) is the percentage probability of confidence defined as input set for the test.
+- coP(%) is the percentage probability of confidence calculated as best fit by the function test_prop() (my proposed function) that, as mentioned before can't be equal to co(%) because n_l and/or n_up are forced to be integer.
+- co_sP(%) is the actual percentage probability of confidence resulting from the simulation, with the test limits calculated by the proposed functions test_prop() or ss_prop().
+- pwr_sP() is the actual percentage probability of power resulting from the simulation, for the specified value p1(%), with the test limits calculated by the proposed functions test_prop() or ss_prop(). (In this case the simulated data stream is generated by rbinom(1e6,N,p1))
+- co_sR(%) is the actual percentage probability of confidence resulting from the simulation, with the test limits calculated by the R function binom.test().
+- pwr_sP() is the actual percentage probability of power resulting from the simulation, for the specified value p1(%), with the test limits calculated by the R function binom.test(). 
+- side is the alternative hypothesis indicator
+
+### Performance evaluation of function test_prop() 
+
+Finally the table below shows the behavior of function test_prop() for some cases where the the sample size N has been freely set without any particular consideration about power, nevertheless the power performances are still evaluated respect the p1(%) input.
+
+```{r,echo=FALSE}
+# Simulation and comparison with binom.test()
+set.seed(123)
+
+N_obs <- 1000000
+steps <- 1
+
+Test <- T
+if(Test){
+    sel1 <- c(1,2,3,4,6,7,8,11)
+    sel2 <- c(1,2,3,4,7,9,8,10,11)
+} else {
+    sel1 <- c(1,2,3,4,5,6,7,8,11)
+    sel2 <- c(1,2,3,4,5,7,9,8,10,11)
+}
+
+# confronto con binom.test
+Nv <-     c(   250,   500,   1200,   15000, 5000,    5000,    800,   800, 124)
+p0v <-    c(  0.01,  0.01,   0.1 , 0.0005,  0.01,    0.001,   0.1,  0.1, 0.005)
+p1v <-    c(  0.03,  0.03,   0.11, 0.001 , 0.006,    0.0001, 0.142,0.0647,0.05)
+confv <-  c(  0.95,  0.85,   0.90,  0.99  , 0.95,     0.95,   0.95, 0.95,  0.95)
+powerv <- c(    NA,    NA,     NA,    NA  ,   NA,       NA,     NA,   NA,    NA)
+sidev <-  c("less","less", "less", "less", "greater","greater","two","two","less" )
+
+
+
+tf <- data.frame(N = Nv, p0 = p0v, p1 = p1v, conf = confv,power = powerv, 
+                         side = sidev,stringsAsFactors = F)
+
+
+sim_res <- data.frame(N = 0, p0 = 0, p1 = 0, conf_in = 0, power_in = 0, conf = 0, 
+                      conf_sM = 0, power_sM = 0,
+                      conf_sR = 0, power_sR = 0, side = "text", stringsAsFactors = F )
+names(sim_res)[2] <- "p0(%)"
+names(sim_res)[3] <- "p1(%)"
+names(sim_res)[4] <- "co(%)"
+names(sim_res)[5] <- "pwr(%)"
+names(sim_res)[6] <- "co_P(%)"
+names(sim_res)[7] <- "co_sP(%)"
+names(sim_res)[8] <- "pwr_sP(%)"
+names(sim_res)[9] <- "co_sR(%)"
+names(sim_res)[10] <- "pwr_sR(%)"
+
+sim_res <- rbind(sim_res,sim_res)
+
+for (i in 1:length(tf[,1])) {
+    N <- tf$N[i]
+    p0 <- round(tf$p0[i]*100,digits = 2)
+    p1 <- round(tf$p1[i]*100,digits = 2)
+    conf_in <- round(tf$conf[i]*100, digits = 2)
+    side <- tf$side[i]
+    sim_data <- rbinom(N_obs,tf$N[i],tf$p0[i])
+    sim_datap <- rbinom(N_obs,tf$N[i],tf$p1[i])
+    if (tf$side[i] == "less") {
+        n_up <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,3]
+        crM <- round(mean(sim_data <= n_up)*100,digits = 1)
+        pM <- round(100-mean(sim_datap <= n_up)*100,digits = 1)
+        n_ib <- tf$N[i]*binom.test(round(tf$p0[i]*tf$N[i],digits=0),tf$N[i],
+                             alternative ="less",conf.level = tf$conf[i])$conf.int
+        crR <- round(mean(sim_data <= n_ib[[2]])*100,digits = 1)
+        pR <- round(100-mean(sim_datap <= n_ib[[2]])*100,digits = 1)
+    } else if (tf$side[i] == "greater") {
+        n_l <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,2]
+        crM <- round(mean(sim_data >= n_l)*100,digits = 1)
+        pM <- round(100-mean(sim_datap >= n_l)*100,digits = 1)
+        n_ib <- tf$N[i]*binom.test(round(tf$p0[i]*tf$N[i],digits=0),tf$N[i],
+                                   alternative ="greater",conf.level = tf$conf[i])$conf.int
+        crR <- round(mean(sim_data >= n_ib[[1]])*100,digits = 1)
+        pR <- round(100-mean(sim_datap >= n_ib[[1]])*100,digits = 1)
+    } else {
+        nv <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,2:3]
+        crM <- round(mean((sim_data >= nv[[1]]) & 
+                                   (sim_data <= nv[[2]]))*100,digits = 1)
+        pM <- round(100-mean((sim_datap >= nv[[1]]) & 
+                                       (sim_datap <= nv[[2]]))*100,digits = 1)
+        n_ib <- tf$N[i]*binom.test(round(tf$p0[i]*tf$N[i],digits=0),tf$N[i],
+                                   alternative ="two.sided",conf.level = tf$conf[i])$conf.int
+        crR <- round(mean((sim_data >= n_ib[[1]]) & 
+                                   (sim_data <= n_ib[[2]]))*100,digits = 1)
+        pR <- round(100-mean((sim_datap >= n_ib[[1]]) & 
+                                       (sim_datap <= n_ib[[2]]))*100,digits = 1)
+    }
+    conf_r <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,6]
+    power_in <- tf$power[i]*100
+    sim_res[i,] <- c(N, p0, p1, conf_in,power_in, conf_r, crM, pM, crR, pR, side)
+}
+
+sim_res[,sel1]
+```
+
+From the above table we can notice that the experimental confidence co_sP(%) always matches the calculated value co_P(%) by test_prop().
+
+\newpage
+### Comparison of function test_prop() with binom.test()
+
+The following table refers the same cases as the previous one:
+
+```{r, echo=FALSE}
+
+sim_res[,sel2]
+```
+The R function binom.test() seems more inaccurate achieving the confidence set. For one sided interval, when the side is "less", the actual confidence always exceed the better approximation provided by test_prop(). The consequence is a worse performance concerning power for the same value of p1. For one side "greater" intervals, in one case binom.test() fails achieving the confidence input set, while for two sided intervals we have the same behavior.
+However, these differences are still not as impressive as can be achieved by comparing ss_prop() and power.prop.test().
+
+### Performance evaluation of function ss_prop() 
+
+The following table shows the best fit for the input parameters p0(%),p1(%),co(%) and pwr(%) for the proposed function ss_prop(), with the simulation results always obtained with 1 million observations for each case.
+```{r, echo=FALSE}
+# Simulation and comparison with binom.test()
+set.seed(123)
+
+N_obs <- 1000000
+steps <- 1
+
+Test <- F
+if(Test){
+    sel1 <- c(1,2,3,4,6,7,8,11)
+    sel2 <- c(1,2,3,4,7,9,8,10,11)
+} else {
+    sel1 <- c(1,2,3,4,5,6,7,8,11)
+    sel2 <- c(1,2,3,4,5,7,9,8,10,11)
+}
+
+odd <- c(1,3,5,7)
+even <- c(2,4,6,8)
+
+# confronto con power.prop.test 
+Nv <-     c(  362,   787 ,   484,  970,   694, 1379,  673, 1211)
+p0v <-    c(  0.005, 0.005,  0.05, 0.05,  0.05, 0.05, 0.05, 0.05)
+p1v <-    c(  0.02,  0.02,   0.08, 0.08,  0.03, 0.03, 0.08, 0.08)
+confv <-  c(  0.95,  0.95,   0.95, 0.95,  0.95, 0.95, 0.95, 0.95) 
+powerv <-  c(  0.85,  0.85,   0.85, 0.85,  0.85, 0.85, 0.85, 0.85)
+sidev <-  c("less", "less", "less","less","greater","greater","two","two")
+
+
+
+tf <- data.frame(N = Nv, p0 = p0v, p1 = p1v, conf = confv,power = powerv, 
+                         side = sidev,stringsAsFactors = F)
+
+
+sim_res <- data.frame(N = 0, p0 = 0, p1 = 0, conf_in = 0, power_in = 0, conf = 0, 
+                      conf_sM = 0, power_sM = 0,
+                      conf_sR = 0, power_sR = 0, side = "text", stringsAsFactors = F )
+names(sim_res)[2] <- "p0(%)"
+names(sim_res)[3] <- "p1(%)"
+names(sim_res)[4] <- "co(%)"
+names(sim_res)[5] <- "pwr(%)"
+names(sim_res)[6] <- "co_P(%)"
+names(sim_res)[7] <- "co_sP(%)"
+names(sim_res)[8] <- "pwr_sP(%)"
+names(sim_res)[9] <- "co_sR(%)"
+names(sim_res)[10] <- "pwr_sR(%)"
+
+sim_res <- rbind(sim_res,sim_res)
+
+for (i in 1:length(tf[,1])) {
+    N <- tf$N[i]
+    p0 <- round(tf$p0[i]*100,digits = 2)
+    p1 <- round(tf$p1[i]*100,digits = 2)
+    conf_in <- round(tf$conf[i]*100, digits = 2)
+    side <- tf$side[i]
+    sim_data <- rbinom(N_obs,tf$N[i],tf$p0[i])
+    sim_datap <- rbinom(N_obs,tf$N[i],tf$p1[i])
+    if (tf$side[i] == "less") {
+        n_up <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,3]
+        crM <- round(mean(sim_data <= n_up)*100,digits = 1)
+        pM <- round(100-mean(sim_datap <= n_up)*100,digits = 1)
+        n_ib <- tf$N[i]*binom.test(round(tf$p0[i]*tf$N[i],digits=0),tf$N[i],
+                             alternative ="less",conf.level = tf$conf[i])$conf.int
+        crR <- round(mean(sim_data <= n_ib[[2]])*100,digits = 1)
+        pR <- round(100-mean(sim_datap <= n_ib[[2]])*100,digits = 1)
+    } else if (tf$side[i] == "greater") {
+        n_l <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,2]
+        crM <- round(mean(sim_data >= n_l)*100,digits = 1)
+        pM <- round(100-mean(sim_datap >= n_l)*100,digits = 1)
+        n_ib <- tf$N[i]*binom.test(round(tf$p0[i]*tf$N[i],digits=0),tf$N[i],
+                                   alternative ="greater",conf.level = tf$conf[i])$conf.int
+        crR <- round(mean(sim_data >= n_ib[[1]])*100,digits = 1)
+        pR <- round(100-mean(sim_datap >= n_ib[[1]])*100,digits = 1)
+    } else {
+        nv <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,2:3]
+        crM <- round(mean((sim_data >= nv[[1]]) & 
+                                   (sim_data <= nv[[2]]))*100,digits = 1)
+        pM <- round(100-mean((sim_datap >= nv[[1]]) & 
+                                       (sim_datap <= nv[[2]]))*100,digits = 1)
+        n_ib <- tf$N[i]*binom.test(round(tf$p0[i]*tf$N[i],digits=0),tf$N[i],
+                                   alternative ="two.sided",conf.level = tf$conf[i])$conf.int
+        crR <- round(mean((sim_data >= n_ib[[1]]) & 
+                                   (sim_data <= n_ib[[2]]))*100,digits = 1)
+        pR <- round(100-mean((sim_datap >= n_ib[[1]]) & 
+                                       (sim_datap <= n_ib[[2]]))*100,digits = 1)
+    }
+    conf_r <- test_prop(tf$conf[i],tf$N[i],tf$p0[i],tf$p1[i],power,steps,-1,tf$side[i])[1,6]
+    power_in <- tf$power[i]*100
+    sim_res[i,] <- c(N, p0, p1, conf_in,power_in, conf_r, crM, pM, crR, pR, side)
+}
+
+sim_res[odd,sel1]
+
+```
+
+### Comparison of function s_prop() with power.prop.test()
+
+Now let's compare ss_prop() and power.prop.test() output results for the same list of input parameters corresponding to the first line of the above table 
+```{r}
+p0 <- 0.005
+p1 <- 0.02
+conf <- 0.95
+power <- 0.85
+side <- "less"
+
+dat <- ss_prop(p0,p1,conf,power,side)
+dat
+
+
+```
+
+\newpage
+while the corresponding R function gives:
+```{r}
+power.prop.test(p1=p0,p2=p1,sig.level = 1-conf,power = power,
+                alternative = "one")
+
+```
+
+
+The main difference we can see from comparing the output is that the sample size calculated by power.prop.test() is more than twice that calculated by ss_prop() despite the solution of ss_prop(), (directly available by n_up test limit), has been already positively verified by simulations. An additional difference is about the confidence and power output that in ss_prop() are the actual value implemented by the test rather than the theoretical input values.
+The next table shows the comparison of the two functions for all cases of the previous table. In this simulation the test limits by R functions are obtained again with binom.test().
+
+
+```{r,echo=FALSE}
+sim_res[odd,sel2]
+```
+
+The simulation shows that the test limits (not shown here) calculated by binom.test(), never satisfy the input data as minimum requirements.
+Especially when side = "less" or "two" the actual power is always lower and sometimes much lower than the power input and vice versa, when side = "greater" is the actual confidence to be lower than the expected input.
+
+The next table shows instead the same comparisons schema, but performed with the sample sizes calculated by function power.prop.test(), always referring the same cases.
+```{r, echo=FALSE}
+sim_res[even,sel2]
+```
+
+The sample sizes N calculated by power.prop.test() are always roughly **double  those calculated by ss_prop(),** nevertheless in case at line 6, corresponding to line 5 on the previous table and with side = "greater", the actual confidence is still lower than the expected input.
+
+## Conclusions
+
+Dear all, I started this work as a personal exercise to become familiar with with R and Rstudio, after that it turned out step by step in a real research.
+The ability to determine a sample size of 50% or even less than what is currently calculated for the same input requirements seems to me a significant result.
+I run this code and developed this Rmarkdown on R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out", but I also tested it on the older version 3.4.
+You can find all R code in the attached Rmd file.
+I may be the victim of an oversight, if this is the case please give me feedback. If not, please give me feedback anyway :)
+
+

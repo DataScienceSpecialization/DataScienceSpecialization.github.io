@@ -26,7 +26,7 @@ permalink: /curated/
 
 ### R
 
-- [Try R](http://tryr.codeschool.com/)
+- [Learn R on Coddy](https://coddy.tech/landing/r)
 - [The R Book by Michael J. Crawley](https://archive.org/details/TheRBook/)
 - [Univ. of Calif. Riverside R Programming](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-R-Basics)
 - [G. Sanchez - Strings in R](http://gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf)
